@@ -31,10 +31,17 @@ public class InventoryHandler : MonoBehaviour
 
       IDataHandler dataHandler;
       private void Awake( ) {
-            inventory = new Inventory( );
-            dataHandler = new DataManager( inventory );
-            equipment = new Equipment( );          
-           //   LOAD !   inventory_so.SetItems( dataHandler.Load( ).InventorySlots );
+            inventory = new Inventory( );          
+            equipment = new Equipment( );
+            dataHandler = new DataManager( inventory, equipment );
+            LoadInventory( );
+
+
+      }
+      private void LoadInventory( ) {
+            dataHandler = dataHandler.LoadInventory( );
+            equipment_so.EquipmentSlots = dataHandler.Equipment.EquipmentSlots;
+            inventory_so.SetItems( dataHandler.Inventory.InventorySlots );
       }
       private void Start( ) {
            ui_Inventory.slotClicked += Ui_Inventory_onItemLeftClicked;
@@ -43,7 +50,7 @@ public class InventoryHandler : MonoBehaviour
       private void Ui_equipment_ItemClicked( UI_EquipmentSlot item , PointerEventData eventData ) {
             if ( eventData.button == PointerEventData.InputButton.Left ) {
                   var equipmentType = item.GetItem().Type;
-                  Debug.Log( item.GetItem( ) );
+                //  Debug.Log( item.GetItem( ) );
                   inventory_so.AddItem( item.GetItem( ));
                   equipment_so.RemoveItem( equipmentType );                                               
             }
@@ -76,11 +83,15 @@ public class InventoryHandler : MonoBehaviour
       private void Update( ) {
             if(Input.GetKeyDown(KeyCode.C)) {
                   inventory.InventorySlots = inventory_so.GetItems( );
+                  equipment.EquipmentSlots = equipment_so.EquipmentSlots;
                   dataHandler.Save( );
             }
       }
       private void OnApplicationQuit( ) {
             inventory_so.GetItems( ).Clear( );
+            foreach(var equipItem in equipment_so.EquipmentSlots ) {
+                  equipItem.Item = null;
+            }
       }
 
 

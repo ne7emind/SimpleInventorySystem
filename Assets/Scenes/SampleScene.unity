@@ -550,9 +550,9 @@ GameObject:
   - component: {fileID: 234013213}
   - component: {fileID: 234013215}
   - component: {fileID: 234013214}
+  - component: {fileID: 234013216}
   - component: {fileID: 234013218}
   - component: {fileID: 234013217}
-  - component: {fileID: 234013216}
   m_Layer: 5
   m_Name: Shield
   m_TagString: Untagged
@@ -578,7 +578,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.75500005, y: 0.53000003}
   m_AnchorMax: {x: 0.896, y: 0.70142376}
-  m_AnchoredPosition: {x: -0.000030517578, y: 0.000030517578}
+  m_AnchoredPosition: {x: 0, y: 0.000030517578}
   m_SizeDelta: {x: -0.000015258789, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &234013214
@@ -2835,9 +2835,9 @@ GameObject:
   - component: {fileID: 1715111900}
   - component: {fileID: 1715111902}
   - component: {fileID: 1715111901}
+  - component: {fileID: 1715111903}
   - component: {fileID: 1715111905}
   - component: {fileID: 1715111904}
-  - component: {fileID: 1715111903}
   m_Layer: 5
   m_Name: Necklace
   m_TagString: Untagged

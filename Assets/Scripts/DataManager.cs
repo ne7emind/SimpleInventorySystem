@@ -7,24 +7,27 @@ public class DataManager : IDataHandler
 {
       [SerializeField]
       Inventory inventory;
+      [SerializeField]
+      Equipment equipment;
       public Inventory Inventory { get { return inventory; } }
+      public Equipment Equipment { get { return equipment; } }
       
-      public DataManager(Inventory inventory) {
+      public DataManager(Inventory inventory, Equipment equipment) {
+            this.equipment= equipment;
             this.inventory = inventory;
       }
 
-      public Inventory Load( ) {
-             
+      public DataManager LoadInventory( ) {            
             if ( PlayerPrefs.HasKey( "inventory" ) ) {
                   string data = PlayerPrefs.GetString("inventory");
-                  return JsonUtility.FromJson<Inventory>( data );                              
+                  return JsonUtility.FromJson<DataManager>( data );                              
             }
-            return inventory;
-                           
+            return this;                          
       }
+    
 
       public void Save( ) {
-            string json = JsonUtility.ToJson( inventory );
+            string json = JsonUtility.ToJson( this );
             PlayerPrefs.DeleteAll( );
             PlayerPrefs.SetString( "inventory" , json );
             Debug.Log( json );
@@ -33,5 +36,8 @@ public class DataManager : IDataHandler
 public interface IDataHandler
 {
       void Save( );
-      Inventory Load( );
+      DataManager LoadInventory( );
+      Equipment Equipment { get; }
+      Inventory Inventory { get; } 
+    //  Equipment LoadEquipment( );
 }
