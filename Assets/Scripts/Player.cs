@@ -6,20 +6,26 @@ using static UnityEditor.Progress;
 
 public class Player : MonoBehaviour
 {
-
+      [Header("Equipment")]
       [SerializeField]
       Equipment_SO equipment;
       public Equipment_SO Equipment { get => equipment; }
+      [Header("Inventory")]
       [SerializeField]
       Inventory_SO inventory;
+      [Space]
       [SerializeField]
       float speed;
+      [Space]
       [SerializeField]
       int armor;
+      [Space]
       [SerializeField]
       int attack;
+      [Space]
       [SerializeField]
       int healthPoints = 100;
+      [Space]
       [SerializeField]
       int manaPoints = 100;
 

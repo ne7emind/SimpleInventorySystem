@@ -10,25 +10,26 @@ public class InventoryHandler : MonoBehaviour
       [SerializeField]
       GameObject inventoryObject;
 
+      [Header("Inventory")]
       [SerializeField]
       UI_Inventory ui_Inventory;
-
+      [Space]
       [SerializeField]
       Inventory_SO inventory_so;
 
       Inventory inventory;
-
+      [Header("Equipment")]
       [SerializeField]
       UI_Equipment ui_equipment;
-
+      [Space]
       [SerializeField]
       Equipment_SO equipment_so;
 
       Equipment equipment;
-
+      [Header("Player")]
       [SerializeField]
       Player player;
-
+      [Space]
       [SerializeField]
       Vector2 dropOffset;
       IDataHandler dataHandler;

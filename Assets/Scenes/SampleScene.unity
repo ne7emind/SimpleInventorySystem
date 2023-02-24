@@ -1316,10 +1316,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 469840363}
+  - component: {fileID: 469840364}
   - component: {fileID: 469840362}
   - component: {fileID: 469840361}
   - component: {fileID: 469840360}
-  - component: {fileID: 469840364}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -3509,8 +3509,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1811483797}
   - component: {fileID: 1811483799}
-  - component: {fileID: 1811483798}
   - component: {fileID: 1811483800}
+  - component: {fileID: 1811483798}
   m_Layer: 5
   m_Name: Equipment
   m_TagString: Untagged
