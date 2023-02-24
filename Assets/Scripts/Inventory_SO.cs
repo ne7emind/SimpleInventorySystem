@@ -6,25 +6,23 @@ abstract public class Inventory_SO : ScriptableObject
 {
       [SerializeField]
       List<InventorySlot> items = new List<InventorySlot>();
-      public List<InventorySlot> GetItems( ) {
-            return items;
-      }
-      public void SetItems( List<InventorySlot> items ) {
-            this.items = items;
-      }
+
+      public List<InventorySlot> Items { get => items; set => items = value; } 
 
       public event Action itemChanged;
      // public event Action<string, int> itemRemoved;
 
-      public void RemoveItem( Item_SO item) {
-            for ( int i = 0 ; i < items.Count ; i++ ) {
+      public void RemoveItem( int index) {
+        /*    for ( int i = 0 ; i < items.Count ; i++ ) {
                   if ( items[ i ].Item == item ) {
                         int amount = items[i].Amount;
                         items.RemoveAt( i );
                         itemChanged?.Invoke( );                                            //  itemRemoved?.Invoke( item.name , amount );
                         
                   }
-            }
+            }*/
+            items.RemoveAt(index);
+            itemChanged?.Invoke();
       }
       public void AddItem( Item_SO item ) {
             bool hasItem = false;

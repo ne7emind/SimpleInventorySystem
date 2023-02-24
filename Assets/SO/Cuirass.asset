@@ -16,3 +16,7 @@ MonoBehaviour:
   Type: 0
   Stackable: 0
   sprite: {fileID: 21300000, guid: 2f1eaeeaad36ee5469eff7ff158f37ba, type: 3}
+  Health: 0
+  Mana: 0
+  Armor: 100
+  Attack: 0

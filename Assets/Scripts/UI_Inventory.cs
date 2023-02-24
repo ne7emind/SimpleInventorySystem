@@ -23,12 +23,12 @@ public class UI_Inventory : MonoBehaviour
       public void DisplayInventory( ) {
 
             ClearInventory( );
-            for ( int i = 0 ; i < inventory.GetItems( ).Count ; i++ ) {
+            for ( int i = 0 ; i < inventory.Items.Count ; i++ ) {
                   var item = (GameObject)Instantiate(Resources.Load("Slot"), transform);
                   var slot = item.GetComponent<UI_InventorySlot>();
                   slot.ID = i;
-                  slot.Item = inventory.GetItems( )[ i ].Item;
-                  slot.Amount = inventory.GetItems( )[ i ].Amount;
+                  slot.Item = inventory.Items[ i ].Item;
+                  slot.Amount = inventory.Items[ i ].Amount;
                   ui_slots.Add( slot );           
                   slot.slotClicked += slotClicked;
             }

@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2458f139b27c1af43bff8b336bf9fcd3, type: 3}
   m_Name: Axe
   m_EditorClassIdentifier: 
-  type: 1
   Amount: 1
+  Type: 3
+  Stackable: 0
   sprite: {fileID: 21300000, guid: 172774604c1bee84185a69041576525b, type: 3}
+  Health: 0
+  Mana: 0
+  Armor: 0
+  Attack: 50

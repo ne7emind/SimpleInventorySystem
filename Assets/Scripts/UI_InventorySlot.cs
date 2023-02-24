@@ -20,6 +20,7 @@ public class UI_InventorySlot :MonoBehaviour, IPointerClickHandler
       public int ID { get; set; }
       public int Amount { get; set; }
       public virtual Item_SO Item { get { return item; } set { item = value; } }
+
       public event Action<UI_InventorySlot, PointerEventData> slotClicked;
 
       public void OnPointerClick( PointerEventData eventData ) {

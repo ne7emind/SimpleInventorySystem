@@ -18,8 +18,8 @@ public class EquipmentSlot
       }
       public ItemType Type;
       [SerializeField]
-      Item_SO item;
-      public Item_SO Item {
+       Equipable_SO item;
+      public Equipable_SO Item {
             get {
                   return item;
             }

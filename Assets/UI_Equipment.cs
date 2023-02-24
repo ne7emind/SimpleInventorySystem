@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class UI_Equipment : MonoBehaviour
 {
-
       [SerializeField]
       UI_EquipmentSlot[] uI_EquipmentSlots;
       [SerializeField]
       Equipment_SO equipment;
+      public Equipment_SO Equipment { set => equipment = value; }
 
       public event Action<UI_EquipmentSlot, PointerEventData> ItemClicked;
       private void OnValidate( ) {
@@ -22,13 +22,17 @@ public class UI_Equipment : MonoBehaviour
             foreach ( var slot in uI_EquipmentSlots ) {
                   slot.ItemClicked += ItemClicked;
             }
-            DisplayEquipment( );
-            equipment.equipmentChanged += DisplayEquipment;
+            if ( equipment != null ) {
+                  DisplayEquipment( );
+                  equipment.equipmentChanged += DisplayEquipment;
+            }
+            else
+                  Debug.LogError( "No equipment selected" );
       }
 
       public void DisplayEquipment( ) {
-            for ( int i = 0 ; i < uI_EquipmentSlots.Length ; i++ ) {                            
-                  uI_EquipmentSlots[ i ].SetItem( equipment.EquipmentSlots[ i ].Item );
+            for ( int i = 0 ; i < uI_EquipmentSlots.Length ; i++ ) {
+                  uI_EquipmentSlots[ i ].Item = equipment.EquipmentSlots[ i ].Item;
             }
 
       }

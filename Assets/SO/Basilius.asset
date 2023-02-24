@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f872cb37a517884ba39f0ab10d0da66, type: 3}
   m_Name: Basilius
   m_EditorClassIdentifier: 
-  type: 2
+  Amount: 1
+  Type: 5
   Stackable: 0
   sprite: {fileID: 21300000, guid: 970324311431c794ca338446ea889948, type: 3}
+  Health: 100
+  Mana: 0
+  Armor: 0
+  Attack: 0
