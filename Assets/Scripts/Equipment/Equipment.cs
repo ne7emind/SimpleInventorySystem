@@ -7,13 +7,13 @@ using UnityEngine;
 public class Equipment
 {
       [SerializeField]
-      EquipmentSlot[ ] equipmentSlots = new EquipmentSlot[7];
+      EquipmentSlot[ ] _equipmentSlots = new EquipmentSlot[7];
       public EquipmentSlot[ ] EquipmentSlots {
             get {
-                  return equipmentSlots;
+                  return _equipmentSlots;
             }
             set {
-                  equipmentSlots = value;
+                  _equipmentSlots = value;
             }
       }
 

@@ -5,11 +5,11 @@ using UnityEngine;
 abstract public class Inventory_SO : ScriptableObject
 {
       [SerializeField]
-      List<InventorySlot> items = new List<InventorySlot>();
+      List<InventorySlot> _items = new List<InventorySlot>();
 
-      public List<InventorySlot> Items { get => items; set => items = value; } 
+      public List<InventorySlot> Items { get => _items; set => _items = value; } 
 
-      public event Action itemChanged;
+      public event Action ItemChanged;
      // public event Action<string, int> itemRemoved;
 
       public void RemoveItem( int index) {
@@ -21,35 +21,35 @@ abstract public class Inventory_SO : ScriptableObject
                         
                   }
             }*/
-            items.RemoveAt(index);
-            itemChanged?.Invoke();
+            _items.RemoveAt(index);
+            ItemChanged?.Invoke();
       }
       public void AddItem( Item_SO item ) {
             bool hasItem = false;
             if ( item is Stackable_SO ) {
-                  for ( int i = 0 ; i < items.Count ; i++ ) {
-                        if ( items[ i ].Item == item ) {
-                              items[ i ].Amount++;
+                  for ( int i = 0 ; i < _items.Count ; i++ ) {
+                        if ( _items[ i ].Item == item ) {
+                              _items[ i ].Amount++;
                               hasItem = true;
                               break;
                         }
                   }
             }
             if ( !hasItem ) {
-                  items.Add( new InventorySlot( item , item.Amount ) );                 
+                  _items.Add( new InventorySlot( item , item.Amount ) );                 
             }
 
-            itemChanged?.Invoke( );
+            ItemChanged?.Invoke( );
       }
       
       public void UseItem( Item_SO item ) {
-            for ( int i = 0 ; i < items.Count ; i++ ) {
-                  if ( items[ i ].Item == item ) {
-                        items[ i ].Amount--;
-                        if ( items[ i ].Amount <= 0 ) {
-                              items.RemoveAt( i );                            
+            for ( int i = 0 ; i < _items.Count ; i++ ) {
+                  if ( _items[ i ].Item == item ) {
+                        _items[ i ].Amount--;
+                        if ( _items[ i ].Amount <= 0 ) {
+                              _items.RemoveAt( i );                            
                         }
-                        itemChanged?.Invoke( );
+                        ItemChanged?.Invoke( );
                         return;
                   }
             }

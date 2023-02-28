@@ -6,14 +6,14 @@ using UnityEngine;
 public class Inventory
 {
       [SerializeField]
-      List<InventorySlot> slots = new List<InventorySlot>();
+      List<InventorySlot> _slots = new List<InventorySlot>();
 
       public List<InventorySlot> InventorySlots {
             get {
-                  return slots;
+                  return _slots;
             }
             set {
-                  slots = value;
+                  _slots = value;
             }
       }
 }

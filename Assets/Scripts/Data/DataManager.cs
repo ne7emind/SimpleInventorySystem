@@ -6,15 +6,15 @@ using UnityEngine;
 public class DataManager : IDataHandler
 {
       [SerializeField]
-      Inventory inventory;
+      Inventory _inventory;
       [SerializeField]
-      Equipment equipment;
-      public Inventory Inventory { get { return inventory; } }
-      public Equipment Equipment { get { return equipment; } }
+      Equipment _equipment;
+      public Inventory Inventory { get { return _inventory; } }
+      public Equipment Equipment { get { return _equipment; } }
       
       public DataManager(Inventory inventory, Equipment equipment) {
-            this.equipment= equipment;
-            this.inventory = inventory;
+            this._equipment= equipment;
+            this._inventory = inventory;
       }
 
       public DataManager LoadInventory( ) {            
@@ -32,12 +32,4 @@ public class DataManager : IDataHandler
             PlayerPrefs.SetString( "inventory" , json );
             Debug.Log( json );
       }
-}
-public interface IDataHandler
-{
-      void Save( );
-      DataManager LoadInventory( );
-      Equipment Equipment { get; }
-      Inventory Inventory { get; } 
-    //  Equipment LoadEquipment( );
 }

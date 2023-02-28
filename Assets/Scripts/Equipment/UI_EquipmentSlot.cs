@@ -7,27 +7,31 @@ using System;
 public class UI_EquipmentSlot : MonoBehaviour, IPointerClickHandler
 {
       [SerializeField]
-      Image itemSprite;
+      Image _itemSprite;
       [SerializeField]
-      Item_SO item; 
+      Item_SO _item; 
       public event Action<UI_EquipmentSlot, PointerEventData> ItemClicked;
       public Item_SO Item {
             get {
-                  return this.item;
+                  return this._item;
             }
             set {
-                  item = value; 
+                  _item = value; 
                   if ( value == null ) {
-                        itemSprite.enabled = false;
+                        _itemSprite.enabled = false;
                         return;
                   }
-                  itemSprite.enabled = true;
-                  itemSprite.sprite = item.sprite;
+                  _itemSprite.enabled = true;
+                  _itemSprite.sprite = _item.sprite;
             }
+      }
+      private void OnValidate( ) {
+            _itemSprite = transform.GetChild( 0 ).GetComponent<Image>();
+
       }
 
       public void OnPointerClick( PointerEventData eventData ) {
-            if(item != null)
+            if(_item != null)
             ItemClicked?.Invoke( this, eventData );
       }
 }

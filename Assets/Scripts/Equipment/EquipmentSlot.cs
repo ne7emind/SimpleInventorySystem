@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
 
 [System.Serializable]
@@ -18,13 +17,13 @@ public class EquipmentSlot
       }
       public ItemType Type;
       [SerializeField]
-       Equipable_SO item;
+       Equipable_SO _item;
       public Equipable_SO Item {
             get {
-                  return item;
+                  return _item;
             }
             set {
-                  item = value;
+                  _item = value;
             }
       }
 

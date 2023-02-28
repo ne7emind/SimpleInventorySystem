@@ -1,18 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
+
 using UnityEngine;
-using UnityEngine.EventSystems;
  public class ItemWorld : MonoBehaviour, IDestroyable
 {
       [SerializeField]
-      Item_SO item;
-      public Item_SO Item { get { return item; } }
+      Item_SO _item;
+      public Item_SO Item { get { return _item; } }
 
       private void OnValidate( ) {
-            if ( item == null )
+            if ( _item == null )
                   return;
-            GetComponent<SpriteRenderer>().sprite = item.sprite;
-            gameObject.name = item.name;
+            GetComponent<SpriteRenderer>().sprite = _item.sprite;
+            gameObject.name = _item.name;
       }
       public void Destroy( ) {
             Destroy( gameObject );
