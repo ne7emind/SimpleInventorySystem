@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3856675e5b2ea45a5e002bfef44d2d, type: 3}
   m_Name: ManaPotion
   m_EditorClassIdentifier: 
-  type: 3
-  stackable: 1
   Amount: 1
+  Type: 7
+  Stackable: 1
   sprite: {fileID: 21300000, guid: 6592b916f86b19e428db6f6847c7b6dd, type: 3}

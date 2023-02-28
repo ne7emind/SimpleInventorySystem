@@ -12,18 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74163dbb0bc25584f8374c5a3d810b00, type: 3}
   m_Name: Equipment
   m_EditorClassIdentifier: 
-  equipmentSlots:
+  _equipmentSlots:
   - Type: 0
-    item: {fileID: 0}
+    _item: {fileID: 0}
   - Type: 1
-    item: {fileID: 0}
+    _item: {fileID: 0}
   - Type: 2
-    item: {fileID: 0}
+    _item: {fileID: 0}
   - Type: 3
-    item: {fileID: 0}
+    _item: {fileID: 0}
   - Type: 4
-    item: {fileID: 0}
+    _item: {fileID: 0}
   - Type: 5
-    item: {fileID: 0}
+    _item: {fileID: 0}
   - Type: 6
-    item: {fileID: 0}
+    _item: {fileID: 0}
